@@ -1,0 +1,123 @@
+﻿<Window x:Class="SpiderLaiR.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d" x:Name="MainWiondow"
+        Title="小说爬虫可视化管理器" Height="800" Width="1250"
+        FontFamily="Microsoft YaHei" FontWeight="ExtraLight" FontSize="12"
+        WindowStartupLocation="CenterScreen"  WindowStyle="None" 
+        AllowsTransparency="True" Background="{x:Null}">
+    <Window.Resources>
+        <ResourceDictionary>
+            <Style TargetType="RadioButton" x:Key="NavButtonStyle">
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="RadioButton">
+                            <Border Background="#326CF3" Name="back" Margin="5,0,0,0" >
+                                <Grid>
+                                    <ContentControl Content="{TemplateBinding Content}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,4" FontSize="13"/>
+                                    <Grid Name="Selectedtag" Width="5" HorizontalAlignment="Right" Background="White" Visibility="Hidden"/>
+                                </Grid>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="back" Property="Background" Value="#44FFFFFF"/>
+                                    <Setter TargetName="Selectedtag" Property="Visibility" Value="Visible"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="back" Property="Background" Value="#11FFFFFF"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border Margin="5" Background="White">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray" ShadowDepth="0" BlurRadius="5" Opacity="0.3" Direction="0" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <hc:Watermark Mark="SpiderSharpLaiR" MouseLeftButtonDown="Watermark_MouseLeftButtonDown" />
+
+            <TextBlock Text="SpiderSharpLaiR"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Foreground="#326CF3" FontSize="30" FontFamily="Arial Black" />
+            <Grid Width="1090" HorizontalAlignment="Right">
+                <Button HorizontalAlignment="Right" Background="Transparent"
+                        Content="&#xe62c;" FontFamily="../Assets/Fonts/#iconfont"
+                        Foreground="#326CF3" BorderBrush="{x:Null}" FontSize="25"
+                        Margin="10" Padding="0"
+			            Command="{Binding com_CloseWindow}"
+                        CommandParameter="{Binding ElementName=MainWiondow}" />
+            </Grid>
+            <Grid Background="#326CF3" HorizontalAlignment="Left" Width="150">
+                <TextBlock Text="&#xe71e;" FontFamily="../Assets/Fonts/#iconfont"
+                       HorizontalAlignment="Center" VerticalAlignment="Center"
+                       Foreground="White" FontSize="50" />
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Background="#326CF3">
+                    <StackPanel Margin="0,20,0,0">
+                        <RadioButton Style="{StaticResource NavButtonStyle}" Height="50" Command="{Binding NavChangedCommand}" CommandParameter="GoPageView" IsChecked="True">
+                            <RadioButton.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Text="&#xe968;" FontFamily="../Assets/Fonts/#iconfont"/>
+                                    <TextBlock FontWeight="Bold" Text="出笼" FontSize="20"/>
+                                </StackPanel>
+                            </RadioButton.Content>
+                        </RadioButton>
+
+                        <RadioButton Style="{StaticResource NavButtonStyle}" Height="50" Command="{Binding NavChangedCommand}" CommandParameter="DownPageView">
+                            <RadioButton.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Text="&#xe71e;" FontFamily="../Assets/Fonts/#iconfont"/>
+                                    <TextBlock FontWeight="Bold" Text="织网" FontSize="20"/>
+                                </StackPanel>
+                            </RadioButton.Content>
+                        </RadioButton>
+
+                        <RadioButton Style="{StaticResource NavButtonStyle}" Height="50" Command="{Binding NavChangedCommand}" CommandParameter="ManagerPageView">
+                            <RadioButton.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Text="&#xe609;" FontFamily="../Assets/Fonts/#iconfont"/>
+                                    <TextBlock FontWeight="Bold" Text="打包" FontSize="20"/>
+                                </StackPanel>
+                            </RadioButton.Content>
+                        </RadioButton>
+
+                        <RadioButton Style="{StaticResource NavButtonStyle}" Height="50" Command="{Binding NavChangedCommand}" CommandParameter="SettingPageView">
+                            <RadioButton.Content>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Bold" Text="&#xe615;" FontFamily="../Assets/Fonts/#iconfont"/>
+                                    <TextBlock FontWeight="Bold" Text="巢穴" FontSize="20"/>
+                                </StackPanel>
+                            </RadioButton.Content>
+                        </RadioButton>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Column="1">
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                        <ContentControl Content="{Binding model_Main.MainContent}"/>
+                    </ScrollViewer>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>

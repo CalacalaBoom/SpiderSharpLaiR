@@ -1,0 +1,53 @@
+﻿<Window x:Class="SpiderLaiR.UserControls.TextDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        mc:Ignorable="d" Height="300" Width="450"
+        FontFamily="Microsoft YaHei" FontWeight="ExtraLight"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True" Background="{x:Null}">
+    <Border Margin="5" Background="White" CornerRadius="15" BorderBrush="Gray" BorderThickness="1">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray" ShadowDepth="5" BlurRadius="5" Opacity="0.3" Direction="0" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Border Background="#326CF3" CornerRadius="15,15,0,0" />
+            <Grid>
+                <hc:Watermark x:Name="water_Title" FontSize="15" FontWeight="Bold" MarkMargin="10,0" MouseLeftButtonDown="Watermark_MouseLeftButtonDown" />
+                <Button x:Name="eventExit" HorizontalAlignment="Right" Background="Transparent"
+                        Content="&#xe8bc;" FontFamily="../Assets/Fonts/#iconfont"
+                        Foreground="White" BorderBrush="{x:Null}" FontSize="20"
+                        Margin="0,0,10,0" Padding="0,0,0,0" Click="eventExit_Click" />
+                <TextBlock x:Name="txt_Title"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Foreground="White" FontSize="15" FontFamily="Arial Black" />
+            </Grid>
+
+            <StackPanel  Grid.Row="1">
+                <TextBlock x:Name="txt_Content" HorizontalAlignment="Center" Margin="20,50,20,0"
+                           FontSize="20" TextWrapping="Wrap" FontFamily="Microsoft YaHei" />
+
+                <StackPanel HorizontalAlignment="Center" Visibility="Visible" x:Name="stack_ExitSetting" Margin="0,20,0,0">
+                    <StackPanel>
+                        <RadioButton Style="{StaticResource RadioButtonIcon.Small}"
+                                 Content="退出SpiderSharpLaiR" HorizontalAlignment="Left" IsChecked="{Binding isExit}" />
+
+                        <RadioButton Style="{StaticResource RadioButtonIcon.Small}"
+                                 Content="最小化到托盘" HorizontalAlignment="Left" IsChecked="{Binding isTray}" />
+                    </StackPanel>
+                    <CheckBox Content="记住我的选择" IsChecked="{Binding isChecked}"
+                              HorizontalAlignment="Left" Margin="0,10,0,0" />
+                </StackPanel>
+            </StackPanel>
+            <Button Grid.Row="1" Content="确    定" Foreground="White" BorderBrush="{x:Null}"
+                        Background="#326CF3" Width="200" VerticalAlignment="Bottom" Click="Button_Click"
+                        Margin="0,0,0,20" Height="50" FontSize="25" FontFamily="Microsoft YaHei" FontWeight="Bold" />
+        </Grid>
+    </Border>
+</Window>

@@ -1,0 +1,12 @@
+E:\CSharp\SpiderSharp\lib\bin\Debug\net6.0\lib.deps.json
+E:\CSharp\SpiderSharp\lib\bin\Debug\net6.0\lib.dll
+E:\CSharp\SpiderSharp\lib\bin\Debug\net6.0\lib.pdb
+E:\CSharp\SpiderSharp\lib\obj\Debug\net6.0\lib.csproj.AssemblyReference.cache
+E:\CSharp\SpiderSharp\lib\obj\Debug\net6.0\lib.GeneratedMSBuildEditorConfig.editorconfig
+E:\CSharp\SpiderSharp\lib\obj\Debug\net6.0\lib.AssemblyInfoInputs.cache
+E:\CSharp\SpiderSharp\lib\obj\Debug\net6.0\lib.AssemblyInfo.cs
+E:\CSharp\SpiderSharp\lib\obj\Debug\net6.0\lib.csproj.CoreCompileInputs.cache
+E:\CSharp\SpiderSharp\lib\obj\Debug\net6.0\lib.dll
+E:\CSharp\SpiderSharp\lib\obj\Debug\net6.0\refint\lib.dll
+E:\CSharp\SpiderSharp\lib\obj\Debug\net6.0\lib.pdb
+E:\CSharp\SpiderSharp\lib\obj\Debug\net6.0\ref\lib.dll

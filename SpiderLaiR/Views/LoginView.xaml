@@ -1,0 +1,81 @@
+﻿<Window x:Class="SpiderLaiR.Views.LoginView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:hc="https://handyorg.github.io/handycontrol"
+        x:Name="LoginWindow"
+        mc:Ignorable="d"
+        Title="系统锁定" Height="300" Width="450"
+        FontFamily="Microsoft YaHei" FontWeight="ExtraLight"
+        ResizeMode="NoResize" WindowStartupLocation="CenterScreen"
+        WindowStyle="None" AllowsTransparency="True" Background="{x:Null}">
+    <Border Margin="5" Background="White" CornerRadius="15">
+        <Border.Effect>
+            <DropShadowEffect Color="Gray" ShadowDepth="5" BlurRadius="5" Opacity="0.3" Direction="0" />
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition />
+                <RowDefinition Height="60" />
+            </Grid.RowDefinitions>
+            <Border x:Name="Loading" Grid.Row="1" VerticalAlignment="Center" Margin="32,0,0,0"
+                    Background="#326CF3" CornerRadius="10" Panel.ZIndex="1" HorizontalAlignment="Center" Visibility="Hidden">
+                <hc:LoadingCircle Foreground="White" Margin="10" />
+            </Border>
+            <Border Background="#326CF3" CornerRadius="15,15,0,0" />
+            <Grid>
+                <hc:Watermark Mark="Locked" FontSize="15" FontWeight="Bold" MarkMargin="10,0" MouseLeftButtonDown="Watermark_MouseLeftButtonDown" />
+                <Button x:Name="eventExit" HorizontalAlignment="Right" Background="Transparent"
+                        Content="&#xe62c;" FontFamily="../Assets/Fonts/#iconfont"
+                        Foreground="White" BorderBrush="{x:Null}" FontSize="20"
+                        Margin="0,0,10,0" Padding="0,0,0,0" Click="eventExit_Click" />
+                <Button x:Name="eventInfo" HorizontalAlignment="Left" Background="Transparent"
+                        Content="&#xe61c;" FontFamily="../Assets/Fonts/#iconfont"
+                        Foreground="White" BorderBrush="{x:Null}" FontSize="20"
+                        Margin="10,0,0,0" Padding="0,0,0,0" Click="eventInfo_Click">
+                    <Button.ContextMenu>
+                        <ContextMenu>
+                            <MenuItem Header="作者：CalacalaBoom" Click="Au_Click" />
+                            <MenuItem Header="Github" Click="MenuItem_Click" />
+                            <MenuItem Header="html-agility-pack小说爬虫" Click="HP_Click" />
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
+                <TextBlock Text="系统锁定"
+                           VerticalAlignment="Center" HorizontalAlignment="Center"
+                           Foreground="White" FontSize="15" FontFamily="Arial Black" />
+            </Grid>
+
+            <Grid Grid.Row="1" Background="#FFF9F9F9">
+                <Border Background="White" Margin="10" CornerRadius="15" />
+                <hc:OutlineText StrokePosition="Outside" FontSize="100"
+                                FontWeight="Bold" StrokeThickness="1"
+                                Stroke="{DynamicResource DangerBrush}"
+                                Text="ADMIN" HorizontalAlignment="Center"
+                                VerticalAlignment="Center" Fill="#FFA52121"
+                                FontFamily="Parchment" />
+                <hc:Watermark FontSize="70" Mark="&#xe615;"
+                              FontFamily="../Assets/Fonts/#iconfont"
+                              FontWeight="Bold" Margin="10" MarkMargin="10" MarkBrush="#20FF0000" />
+            </Grid>
+
+            <Border Grid.Row="2" Background="#FFF9F9F9" CornerRadius="0,0,15,15" />
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <hc:PasswordBox x:Name="Password" ShowClearButton="True" Height="40"
+                                Margin="20,10,10,10" ShowEyeButton="True"
+                                hc:InfoElement.Placeholder="解锁密码" />
+                <Button x:Name="Login" Grid.Column="1" Width="85" Height="35"
+                        Content="解除锁定" Foreground="White"
+                        Background="#326CF3" BorderBrush="{x:Null}"
+                        FontWeight="Normal" FontSize="15" Click="Login_Click"
+                        FontFamily="Microsoft YaHei" Margin="0,0,20,0" />
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
