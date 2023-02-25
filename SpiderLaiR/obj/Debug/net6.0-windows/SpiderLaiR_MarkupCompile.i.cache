@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-E:\CSharp\SpiderSharp\SpiderLaiR\obj\Debug\net6.0-windows\
+E:\CSharp\SpiderSharp\SpiderSharpLaiR\SpiderLaiR\obj\Debug\net6.0-windows\
 SpiderLaiR
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-E:\CSharp\SpiderSharp\SpiderLaiR\App.xaml
+E:\CSharp\SpiderSharp\SpiderSharpLaiR\SpiderLaiR\App.xaml
 7-1350529603
 
-17135737123
-224-115849944
+20-1109909411
+309-1366527831
 UserControls\TextDialog.xaml;Views\DownPageView.xaml;Views\GoPageView.xaml;Views\LoginView.xaml;Views\MainView.xaml;Views\ManagerPageView.xaml;Views\SettingPageView.xaml;
 
-True
+False
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SpiderLaiR.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace SpiderLaiR.Views
         public GoPageView()
         {
             InitializeComponent();
+            this.DataContext = new GoPageViewModel();
         }
     }
 }

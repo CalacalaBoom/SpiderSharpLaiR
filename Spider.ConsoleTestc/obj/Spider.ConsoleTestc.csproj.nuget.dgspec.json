@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CSharp\\SpiderSharp\\Spider.ConsoleTestc\\Spider.ConsoleTestc.csproj": {}
+    "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\Spider.ConsoleTestc\\Spider.ConsoleTestc.csproj": {}
   },
   "projects": {
-    "E:\\CSharp\\SpiderSharp\\lib\\lib.csproj": {
+    "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\lib\\lib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CSharp\\SpiderSharp\\lib\\lib.csproj",
+        "projectUniqueName": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\lib\\lib.csproj",
         "projectName": "lib",
-        "projectPath": "E:\\CSharp\\SpiderSharp\\lib\\lib.csproj",
+        "projectPath": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\lib\\lib.csproj",
         "packagesPath": "C:\\Users\\14063\\.nuget\\packages\\",
-        "outputPath": "E:\\CSharp\\SpiderSharp\\lib\\obj\\",
+        "outputPath": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\lib\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -78,14 +78,14 @@
         }
       }
     },
-    "E:\\CSharp\\SpiderSharp\\Spider.ConsoleTestc\\Spider.ConsoleTestc.csproj": {
+    "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\Spider.ConsoleTestc\\Spider.ConsoleTestc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CSharp\\SpiderSharp\\Spider.ConsoleTestc\\Spider.ConsoleTestc.csproj",
+        "projectUniqueName": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\Spider.ConsoleTestc\\Spider.ConsoleTestc.csproj",
         "projectName": "Spider.ConsoleTestc",
-        "projectPath": "E:\\CSharp\\SpiderSharp\\Spider.ConsoleTestc\\Spider.ConsoleTestc.csproj",
+        "projectPath": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\Spider.ConsoleTestc\\Spider.ConsoleTestc.csproj",
         "packagesPath": "C:\\Users\\14063\\.nuget\\packages\\",
-        "outputPath": "E:\\CSharp\\SpiderSharp\\Spider.ConsoleTestc\\obj\\",
+        "outputPath": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\Spider.ConsoleTestc\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -107,8 +107,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "E:\\CSharp\\SpiderSharp\\lib\\lib.csproj": {
-                "projectPath": "E:\\CSharp\\SpiderSharp\\lib\\lib.csproj"
+              "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\lib\\lib.csproj": {
+                "projectPath": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\lib\\lib.csproj"
               }
             }
           }

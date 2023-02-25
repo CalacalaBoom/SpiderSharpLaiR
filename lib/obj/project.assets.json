@@ -3674,11 +3674,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CSharp\\SpiderSharp\\lib\\lib.csproj",
+      "projectUniqueName": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\lib\\lib.csproj",
       "projectName": "lib",
-      "projectPath": "E:\\CSharp\\SpiderSharp\\lib\\lib.csproj",
+      "projectPath": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\lib\\lib.csproj",
       "packagesPath": "C:\\Users\\14063\\.nuget\\packages\\",
-      "outputPath": "E:\\CSharp\\SpiderSharp\\lib\\obj\\",
+      "outputPath": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\lib\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

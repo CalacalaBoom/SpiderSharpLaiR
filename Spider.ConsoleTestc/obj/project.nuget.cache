@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "j6zcJTEbA8DFb+QKFakeyyG0A7Z7A6ykB7lgzCKyOJpy/wTx/eA0ztFNDORKhZ/hBAkc0jRUbRzpzOL4ecDaNQ==",
+  "dgSpecHash": "L4pHTWwnkb0cweLOAANTmcAQK0LM0n6yMJTmbv/VcM9B9QEyI8cx15DWZe9FS+tYI1rvYc5WjDcE0kd1lt3dxw==",
   "success": true,
-  "projectFilePath": "E:\\CSharp\\SpiderSharp\\Spider.ConsoleTestc\\Spider.ConsoleTestc.csproj",
+  "projectFilePath": "E:\\CSharp\\SpiderSharp\\SpiderSharpLaiR\\Spider.ConsoleTestc\\Spider.ConsoleTestc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\14063\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\14063\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512",

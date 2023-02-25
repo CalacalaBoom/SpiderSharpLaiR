@@ -27,11 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Converter\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="HandyControl" Version="3.4.0" />
+    <PackageReference Include="LiveCharts.Wpf" Version="0.9.7" />
+    <PackageReference Include="Masuit.Tools.Core" Version="2.5.9.2" />
   </ItemGroup>
 
 </Project>
