@@ -77,7 +77,7 @@ namespace SpiderLaiR.ViewModels
                     model_Main.cvDisk.Add(disk);
                     model_Main.Disk = ((int)disk).ToString() + "KB/s";
 
-                    await Task.Delay(3000);
+                    await Task.Delay(5000);
                 }
             }));
             tasks.Add(task);

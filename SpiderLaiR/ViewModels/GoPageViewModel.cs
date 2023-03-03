@@ -1,4 +1,5 @@
-﻿using Masuit.Tools;
+﻿using lib;
+using Masuit.Tools;
 using Newtonsoft.Json;
 using SpiderLaiR.Assets;
 using SpiderLaiR.Common;
@@ -30,12 +31,23 @@ namespace SpiderLaiR.ViewModels
             Model.event_Start.DoCanExcute=new Func<object, bool>((o) => { return true; });
         }
 
+        private int totalPage;
         private void OnStart(object obj)
         {
-            new Thread(() =>
+            SpiderService todo=new SpiderService("http://www.vbiquge.co/xclass/");
+            totalPage = todo.TotalPages();
+            ThreadPool.SetMaxThreads(5, 5);
+            for (int i = 0; i < 10; i++)
             {
-                
-            }).Start();
+                ThreadPool.QueueUserWorkItem(Run, i);
+            }
+        }
+
+        private void Run(object? state)
+        {
+            Model.txt_OutInfo += state.ToString() + "\r\n";
+            Thread.Sleep(5000);
+            Model.bar_total
         }
     }
 }

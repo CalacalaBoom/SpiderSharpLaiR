@@ -5,41 +5,77 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SpiderLaiR.Views" 
              xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" 
-             xmlns:hc="https://handyorg.github.io/handycontrol"
-             mc:Ignorable="d"
-             d:DesignHeight="1000" d:DesignWidth="1200">
+             xmlns:hc="https://handyorg.github.io/handycontrol">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="40"/>
-            <RowDefinition/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
         <Grid>
-            <StackPanel Orientation="Horizontal">
-                <TextBlock Text="小说源：" VerticalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
-                <ComboBox ItemsSource="{Binding Model.sourceList}" 
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="25"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="小说源：" VerticalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
+                    <ComboBox ItemsSource="{Binding Model.sourceList}" 
                           SelectedIndex="0" Height="30" Width="200"/>
-                <TextBlock Text="爬虫次数：" VerticalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
-                <TextBlock Text="{Binding Model.txt_Count}" VerticalAlignment="Center" FontSize="20"/>
-                <TextBlock Text="上次爬虫时间：" VerticalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
-                <TextBlock Text="{Binding Model.txt_LastTime}" VerticalAlignment="Center" FontSize="20"/>
-            </StackPanel>
-            <Button Content="爬  取" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                    <TextBlock Text="爬虫次数：" VerticalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Model.txt_Count}" VerticalAlignment="Center" FontSize="20"/>
+                    <TextBlock Text="上次爬虫时间：" VerticalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
+                    <TextBlock Text="{Binding Model.txt_LastTime}" VerticalAlignment="Center" FontSize="20"/>
+                </StackPanel>
+                <Button Content="爬  取" VerticalAlignment="Center" HorizontalAlignment="Right" 
                     Margin="0,0,20,0" Height="35" Width="100" IsEnabled="{Binding Model.IsbtnEn}"
                      Foreground="White" Background="#326CF3" BorderBrush="{x:Null}"
                      FontWeight="Normal" FontSize="15" Command="{Binding Model.event_Start}"
                      FontFamily="Microsoft YaHei"/>
+            </Grid>
+
+            <ProgressBar Grid.Row="1" Margin="5,0" Value="{Binding Model.bar_total}"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" x:Name="co1"/>
+            </Grid>
+            <ListView Grid.Row="2" ItemsSource="{Binding Model.list_Txt}" Style="{StaticResource ListView.Small}" Margin="0,0,0,30">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="ID" DisplayMemberBinding="{Binding ID}" Width="{Binding ElementName=co1,Path=ActualWidth}"/>
+                        <GridViewColumn Header="标题" DisplayMemberBinding="{Binding Title}" Width="{Binding ElementName=co1,Path=ActualWidth}"/>
+                        <GridViewColumn Header="作者" DisplayMemberBinding="{Binding Author}" Width="{Binding ElementName=co1,Path=ActualWidth}"/>
+                        <GridViewColumn Header="连载状态" DisplayMemberBinding="{Binding Status}" Width="{Binding ElementName=co1,Path=ActualWidth}"/>
+                        <GridViewColumn Header="字数" DisplayMemberBinding="{Binding Size}" Width="{Binding ElementName=co1,Path=ActualWidth}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
         </Grid>
-
-        <ProgressBar Grid.Row="1" Margin="10,0" Value="{Binding Model.bar_total}"/>
-
-        <DataGrid Grid.Row="2" Style="{StaticResource DataGrid.Small}" HeadersVisibility="All" 
-                  RowHeaderWidth="60" AutoGenerateColumns="False" ItemsSource="{Binding Model.DataList}"
-                  hc:DataGridAttach.ShowRowNumber="True">
-            <DataGrid.Columns>
-                
-            </DataGrid.Columns>
-        </DataGrid>
+        <ToggleButton VerticalAlignment="Bottom"  HorizontalAlignment="Stretch" Content="输出" 
+                      IsChecked="{Binding IsOpen,ElementName=DrawerBottom}" Height="30"/>
+        <hc:Drawer Name="DrawerBottom" Dock="Bottom" ShowMask="False" VerticalAlignment="Bottom">
+            <Border Background="{DynamicResource RegionBrush}" Height="300" BorderThickness="0,1,0,0" BorderBrush="{DynamicResource BorderBrush}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <hc:Watermark Mark="OutPutInfomation"/>
+                    <TextBlock Margin="10,0,0,0" Text="输出" Style="{StaticResource TextBlockTitle}" HorizontalAlignment="Left"/>
+                    <Button Command="hc:ControlCommands.Close" Grid.Row="0" HorizontalAlignment="Right" 
+                            Foreground="{DynamicResource PrimaryTextBrush}" Style="{StaticResource ButtonIcon}" 
+                            hc:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}"/>
+                    <Grid Grid.Row="1">
+                        <hc:Watermark Mark="OutPutInfomation"/>
+                        <TextBox TextWrapping="Wrap" AcceptsReturn="True" Margin="10" Text="{Binding txt_OutInfo}"
+                                 FontFamily="Arial" FontSize="12" VerticalScrollBarVisibility="Visible"
+                                 HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5"/>
+                    </Grid>
+                </Grid>
+            </Border>
+        </hc:Drawer>
     </Grid>
 </UserControl>
