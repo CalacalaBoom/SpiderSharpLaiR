@@ -8,7 +8,38 @@
              xmlns:hc="https://handyorg.github.io/handycontrol"
              mc:Ignorable="d"
              d:DesignHeight="1000" d:DesignWidth="1200">
-    <Grid Background="Red">
-        
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="小说源：" VerticalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
+                <ComboBox ItemsSource="{Binding Model.sourceList}" 
+                          SelectedIndex="0" Height="30" Width="200"/>
+                <TextBlock Text="爬虫次数：" VerticalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
+                <TextBlock Text="{Binding Model.txt_Count}" VerticalAlignment="Center" FontSize="20"/>
+                <TextBlock Text="上次爬虫时间：" VerticalAlignment="Center" FontSize="20" Margin="20,0,0,0"/>
+                <TextBlock Text="{Binding Model.txt_LastTime}" VerticalAlignment="Center" FontSize="20"/>
+            </StackPanel>
+            <Button Content="爬  取" VerticalAlignment="Center" HorizontalAlignment="Right" 
+                    Margin="0,0,20,0" Height="35" Width="100" IsEnabled="{Binding Model.IsbtnEn}"
+                     Foreground="White" Background="#326CF3" BorderBrush="{x:Null}"
+                     FontWeight="Normal" FontSize="15" Command="{Binding Model.event_Start}"
+                     FontFamily="Microsoft YaHei"/>
+        </Grid>
+
+        <ProgressBar Grid.Row="1" Margin="10,0" Value="{Binding Model.bar_total}"/>
+
+        <DataGrid Grid.Row="2" Style="{StaticResource DataGrid.Small}" HeadersVisibility="All" 
+                  RowHeaderWidth="60" AutoGenerateColumns="False" ItemsSource="{Binding Model.DataList}"
+                  hc:DataGridAttach.ShowRowNumber="True">
+            <DataGrid.Columns>
+                
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

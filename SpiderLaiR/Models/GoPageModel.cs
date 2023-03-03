@@ -4,11 +4,51 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace SpiderLaiR.Models
 {
     public class GoPageModel:NotifyBase
     {
-        public string Title { get; set; }
+        private List<string> _sourceList;
+
+        public List<string> sourceList
+        {
+            get { return _sourceList; }
+            set { _sourceList = value; this.DoNotify(); }
+        }
+
+        private int _txt_Count=0;
+
+        public int txt_Count
+        {
+            get { return _txt_Count; }
+            set { _txt_Count = value; this.DoNotify(); }
+        }
+
+        private string _txt_LastTime;
+
+        public string txt_LastTime
+        {
+            get { return _txt_LastTime; }
+            set { _txt_LastTime = value; this.DoNotify(); }
+        }
+
+        private bool _IsbtnEn=true;
+
+        public bool IsbtnEn
+        {
+            get { return _IsbtnEn; }
+            set { _IsbtnEn = value; this.DoNotify(); }
+        }
+
+        private int _bar_total = 0;
+
+        public int bar_total
+        {
+            get { return _bar_total; }
+            set { _bar_total = value; this.DoNotify(); }
+        }
+        public CommandBase event_Start { get;set; }
     }
 }

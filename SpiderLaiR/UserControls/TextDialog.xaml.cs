@@ -16,9 +16,10 @@ namespace SpiderLaiR.UserControls
             water_Title.Mark = title;
             txt_Title.Text = title;
             txt_Content.Text = content;
+            stack_ExitSetting.Visibility= Visibility.Collapsed;
         }
 
-        public ExitModel Model { get; set; }
+        public ExitModel Model { get; set; }=new ExitModel();
 
         public TextDialog(ExitModel model)
         {

@@ -243,7 +243,7 @@
                                 <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left" Margin="15" Orientation="Horizontal">
                                     <Border Width="20" Height="20" Background="#EDFAF0" CornerRadius="5">
                                         <TextBlock Text="D" FontSize="20" Foreground="#7ADA95" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    </Border>
+                                    </Border>       
                                     <TextBlock Text="{Binding model_Main.maxDisk,Converter={StaticResource FloadToDiskConverter}}" VerticalAlignment="Center" Foreground="#7ADA95" Margin="5,0,0,0"/>
                                 </StackPanel>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" Margin="15,3">
